@@ -100,17 +100,34 @@ btnnaoquero = Button(window1, image = nao_quero,
                    )
 btnnaoquero.place(x=130, y=360)
 
-def sosf():
-    playsound('sos.mp3')
-sos = PhotoImage(file='sos.png')
-sos = sos.subsample(2,2)
-btnsos = Button(window1, image = sos,
+def horaf():
+    hora = str(datetime.datetime.fromtimestamp(int(time.time())).strftime('%H'))
+    minutos = str(datetime.datetime.fromtimestamp(int(time.time())).strftime('%M'))
+    fala(f'Agora são {hora} e {minutos}')
+hora = PhotoImage(file='hora.png')
+hora = hora.subsample(2,2)
+btnhora = Button(window1, image =hora,
                    font=('impact bold', "50 "),
                    background='black',
                    foreground='yellow',
-                   command=sosf
+                   command=horaf
                    )
-btnsos.place(x=50, y=500)
+btnhora.place(x=10, y=480)
+
+def dataf():
+    dia = str(datetime.datetime.fromtimestamp(int(time.time())).strftime('%d'))
+    mes = str(datetime.datetime.fromtimestamp(int(time.time())).strftime('%m'))
+    ano = str(datetime.datetime.fromtimestamp(int(time.time())).strftime('%Y'))
+    fala(f'hoje é dia {dia} do mes {mes} e do ano {ano}')
+data = PhotoImage(file='data.png')
+data = data.subsample(2,2)
+btndata = Button(window1, image=data,
+                   font=('impact bold', "50 "),
+                   background='black',
+                   foreground='yellow',
+                   command=dataf
+                   )
+btndata.place(x=130, y=480)
 
 def fomef():
     fala('Estou com fome')
@@ -160,6 +177,30 @@ btnbanho = Button(window1, image = banho,
                    )
 btnbanho.place(x=770, y=10)
 
+def dordecabecaf():
+    fala('Estou com dor de cabeça')
+dordecabeca = PhotoImage(file='dordecabeca.png')
+dordecabeca = dordecabeca.subsample(2,2)
+btndordecabeca = Button(window1, image = dordecabeca,
+                   font=('impact bold', "50 "),
+                   background='black',
+                   foreground='yellow',
+                   command=dordecabecaf
+                   )
+btndordecabeca.place(x=940, y=10)
+
+def silenciof():
+    fala('Silencio por favor')
+silencio = PhotoImage(file='silencio.png')
+silencio = silencio.subsample(2,2)
+btnsilencio = Button(window1, image = silencio,
+                   font=('impact bold', "50 "),
+                   background='black',
+                   foreground='yellow',
+                   command=silenciof
+                   )
+btnsilencio.place(x=1110, y=10)
+
 def banheirof():
     fala('Preciso ir ao banheiro')
 banheiro = PhotoImage(file='banheiro.png')
@@ -208,6 +249,78 @@ btndormir = Button(window1, image =dormir,
                    )
 btndormir.place(x=770, y=180)
 
+def levantarf():
+    fala('Preciso levantar')
+levantar = PhotoImage(file='levantar.png')
+levantar = levantar.subsample(2,2)
+btnlevantar = Button(window1, image =levantar,
+                   font=('impact bold', "50 "),
+                   background='black',
+                   foreground='yellow',
+                   command=levantarf
+                   )
+btnlevantar.place(x=940, y=180)
+
+def pasearf():
+    fala('Vamos passear')
+pasear = PhotoImage(file='pasear.png')
+pasear = pasear.subsample(2,2)
+btnpasear = Button(window1, image =pasear,
+                   font=('impact bold', "50 "),
+                   background='black',
+                   foreground='yellow',
+                   command=pasearf
+                   )
+btnpasear.place(x=1110, y=180)
+
+def familiarumf():
+    fala('familiar um')
+familiarum = PhotoImage(file='familia.png')
+familiarum = familiarum.subsample(2,2)
+btnfamiliarum = Button(window1, image =familiarum,
+                   font=('impact bold', "50 "),
+                   background='black',
+                   foreground='yellow',
+                   command=familiarumf
+                   )
+btnfamiliarum.place(x=940, y=350)
+
+def familiardoisf():
+    fala('familiar dois')
+familiardois = PhotoImage(file='familia.png')
+familiardois = familiardois.subsample(2,2)
+btnfamiliardois = Button(window1, image =familiardois,
+                   font=('impact bold', "50 "),
+                   background='black',
+                   foreground='yellow',
+                   command=familiardoisf
+                   )
+btnfamiliardois.place(x=1110, y=350)
+
+def familiartresf():
+    fala('familiar tres')
+familiartres = PhotoImage(file='familia.png')
+familiartres = familiartres.subsample(2,2)
+btnfamiliartres = Button(window1, image =familiartres,
+                   font=('impact bold', "50 "),
+                   background='black',
+                   foreground='yellow',
+                   command=familiartresf
+                   )
+btnfamiliartres.place(x=940, y=520)
+
+def familiarquatrof():
+    fala('familiar quatro')
+familiarquatro = PhotoImage(file='familia.png')
+familiarquatro = familiarquatro.subsample(2,2)
+btnfamiliarquatro = Button(window1, image =familiarquatro,
+                   font=('impact bold', "50 "),
+                   background='black',
+                   foreground='yellow',
+                   command=familiarquatrof
+                   )
+btnfamiliarquatro.place(x=1110, y=520)
+
 def simf():
     fala('Sim')
 sim = PhotoImage(file='sim.png')
@@ -232,34 +345,7 @@ btnnao = Button(window1, image =nao,
                    )
 btnnao.place(x=650, y=390)
 
-def horaf():
-    hora = str(datetime.datetime.fromtimestamp(int(time.time())).strftime('%H'))
-    minutos = str(datetime.datetime.fromtimestamp(int(time.time())).strftime('%M'))
-    fala(f'Agora são {hora} e {minutos}')
-hora = PhotoImage(file='hora.png')
-hora = hora.subsample(2,2)
-btnhora = Button(window1, image =hora,
-                   font=('impact bold', "50 "),
-                   background='black',
-                   foreground='yellow',
-                   command=horaf
-                   )
-btnhora.place(x=1000, y=20)
 
-def dataf():
-    dia = str(datetime.datetime.fromtimestamp(int(time.time())).strftime('%d'))
-    mes = str(datetime.datetime.fromtimestamp(int(time.time())).strftime('%m'))
-    ano = str(datetime.datetime.fromtimestamp(int(time.time())).strftime('%Y'))
-    fala(f'hoje é dia {dia} do mes {mes} e do ano {ano}')
-data = PhotoImage(file='data.png')
-data = data.subsample(2,2)
-btndata = Button(window1, image=data,
-                   font=('impact bold', "50 "),
-                   background='black',
-                   foreground='yellow',
-                   command=dataf
-                   )
-btndata.place(x=1000, y=350)
 
 window1.configure(background='#cf9bcc')
 window1.geometry('1350x800')
